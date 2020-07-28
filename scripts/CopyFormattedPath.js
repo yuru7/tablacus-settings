@@ -14,19 +14,23 @@ function buildClipText(FV) {
 	// 0: フルパス / 1: ドライブ / 2: 親フォルダ / 3: ファイル・フォルダ名
 	var pattern = /(?:(\w+):|\\)(?:\\([^\\:\*?\"<>\|]+))*(?:\\(([^:\\\*?\"<>\|]+)$))/;
 	
-	var clipText = FV.FolderItem.Path + "\n";
-
+	var clipText = "";
+	var beforeParentFolder = "";
+	
 	for (var i = items.Count; i-- > 0;) {
 		var result = items[i].Path.match(pattern);
-	
-		var lineSymbol;
-		if (i > 0) {
-			lineSymbol = "├";
-		} else {
-			lineSymbol = "└";
-		}
 		
-		clipText = clipText + lineSymbol + " " + result[3] + "\n";
+		var parentPath = fso.GetParentFolderName(items[i].Path);
+		if (beforeParentFolder != parentPath) {
+		if (i < items.Count - 1) {
+			// 最初のアイテムではない場合は、1行空ける
+			clipText = clipText + "\n";
+		}
+			clipText = clipText + parentPath + "\n";
+		}
+		beforeParentFolder = parentPath;
+	
+		clipText = clipText + "└ " + result[3] + "\n";
 	}
 	
 	return clipText;
