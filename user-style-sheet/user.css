@@ -90,8 +90,9 @@
   border-color: #666666;
 }
 .activetab {
-  color: #fff !important;
-  box-shadow: 0 0 0 9em rgba(162, 167, 176, 0.6) inset;
+  color: #fff;
+  background: #5c5e63;
+  box-shadow: 0 0 0 9em rgba(255, 255, 255, 0.25) inset;
   border-color: #d14f5c;
 }
 .tab, .tab2, .tab3 {
@@ -99,7 +100,7 @@
 }
 .tab:hover,
 .tab2:hover {
-  box-shadow: 0 0 0 9em rgba(162, 167, 176, 0.2) inset;
+  box-shadow: 0 0 0 9em rgba(255, 255, 255, 0.15) inset;
 }
 .activetab:after,
 .tab:after,
