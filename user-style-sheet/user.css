@@ -65,7 +65,7 @@
 .activetab {
   color: #fff;
   background: #1257a6;
-  box-shadow: 0 0 0 9em rgba(255, 255, 255, 0.2) inset;
+  box-shadow: 0 0 0 9em rgba(255, 255, 255, 0.25) inset;
   border-color: #ff5722;
 }
 .tab, .tab2, .tab3 {
