@@ -32,7 +32,9 @@ function buildClipText(FV) {
 
   clipText = '';
   pathMap.forEach(function (array, key) {
+    // 親フォルダのパス
     clipText += key + '\n'
+    // 接頭辞を付与した選択しているファイルリスト
     var prefix = '├ ';
     for (i = 0; i < array.length; i++) {
       if (i == array.length - 1) {
