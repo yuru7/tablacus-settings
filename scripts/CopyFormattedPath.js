@@ -24,15 +24,23 @@ function buildClipText(FV) {
 
     // 親フォルダをキーにしたファイル一覧マップを生成
     if (pathMap.get(parentPath) == void 0) {
-      pathMap.set(parentPath, '└ ' + result[3]);
+      pathMap.set(parentPath, [result[3]]);
     } else {
-      pathMap.set(parentPath, pathMap.get(parentPath) + '\n└ ' + result[3]);
+      pathMap.set(parentPath, pathMap.get(parentPath).concat(result[3]));
     }
   }
 
   clipText = '';
-  pathMap.forEach(function (value, key) {
-    clipText = clipText + key + '\n' + value + '\n\n';
+  pathMap.forEach(function (array, key) {
+    clipText += key + '\n'
+    var prefix = '├ ';
+    for (i = 0; i < array.length; i++) {
+      if (i == array.length - 1) {
+        prefix = '└ '
+      }
+      clipText += prefix + array[i] + '\n';
+    }
+    clipText = clipText + '\n';
   });
 
   return clipText;
