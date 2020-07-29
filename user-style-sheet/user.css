@@ -1,0 +1,108 @@
+.tab, .tab2, .tab3,
+.tab:hover, .tab2:hover, .tab3:hover {
+  box-shadow: none;
+}
+
+.tab0 {
+  padding: 3px 6px;
+  background-color: transparent;
+}
+
+.tab0:not(#tabgroups) {
+  border-width: 1px 0 0 0;
+  border-style: solid;  
+}
+
+.tab, .tab2, .tab3 {
+  position: relative;
+  background: transparent;
+  border: 0;
+  border-radius: 2px;
+  padding: 0 12px;
+  opacity: 1 !important;
+  margin: 0.22em 3px 2px 0;
+}
+
+.activetab {
+  position: relative;
+  border: 0;
+  border-radius: 2px;
+  margin: 0 3px 2px 0;
+  padding: 0 12px;
+  height: 2.22em;
+  border-width: 0.22em 0 0 0;
+  border-style: solid;
+}
+
+.activetab:after,
+.tab:after,
+.tab2:after {
+  content: "";
+  position: absolute;
+  left: 100%;
+  bottom: 3px;
+  width: 0;
+  height: 1.4em;
+  border-style: solid;
+  border-width: 0 1px 0 0;
+  margin-left: 1px;
+}
+
+.tab:hover,
+.tab2:hover {
+  opacity: 1;
+  filter: alpha(style=0,opacity=100);
+}
+
+
+/* 以降の配色設定は、通常時か「ダークモード」アドオン有効時かでコメントアウトを切り替える */
+
+/* --- 通常時の配色 ここから --- */
+/*
+.tab0:not(#tabgroups) {
+  border-color: #646464;
+}
+.activetab {
+  color: #fff !important;
+  box-shadow: 0 0 0 9em rgba(0, 45, 130, 0.65) inset;
+  border-color: #fb8c00;
+}
+.tab, .tab2, .tab3 {
+  color: #666;
+}
+.tab:hover,
+.tab2:hover {
+  box-shadow: 0 0 0 9em rgba(0, 45, 130, 0.2) inset;
+}
+.activetab:after,
+.tab:after,
+.tab2:after {
+  border-color: #8a8a8a;
+}
+*/
+/* --- 通常時の配色 ここまで --- */
+
+/* --- ダークモード時の配色 ここから --- */
+
+.tab0:not(#tabgroups) {
+  border-color: #666666;
+}
+.activetab {
+  color: #fff !important;
+  box-shadow: 0 0 0 9em rgba(162, 167, 176, 0.6) inset;
+  border-color: #d14f5c;
+}
+.tab, .tab2, .tab3 {
+  color: #b0b0b0;
+}
+.tab:hover,
+.tab2:hover {
+  box-shadow: 0 0 0 9em rgba(162, 167, 176, 0.2) inset;
+}
+.activetab:after,
+.tab:after,
+.tab2:after {
+  border-color: #999;
+}
+
+/* --- ダークモード時の配色 ここまで --- */
