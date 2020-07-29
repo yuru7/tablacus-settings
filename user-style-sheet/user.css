@@ -63,16 +63,18 @@
   border-color: #646464;
 }
 .activetab {
-  color: #fff !important;
-  box-shadow: 0 0 0 9em rgba(0, 45, 130, 0.65) inset;
-  border-color: #fb8c00;
+  color: #fff;
+  background: #1257a6;
+  box-shadow: 0 0 0 9em rgba(255, 255, 255, 0.2) inset;
+  border-color: #ff5722;
 }
 .tab, .tab2, .tab3 {
   color: #666;
 }
 .tab:hover,
 .tab2:hover {
-  box-shadow: 0 0 0 9em rgba(0, 45, 130, 0.2) inset;
+  background: #dadada;
+  box-shadow: 0 0 0 9em rgba(255, 255, 255, 0.15) inset;
 }
 .activetab:after,
 .tab:after,
