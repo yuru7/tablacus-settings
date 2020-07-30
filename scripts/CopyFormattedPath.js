@@ -30,19 +30,25 @@ function buildClipText(FV) {
     }
   }
 
-  clipText = '';
+  // フォーマットした「親フォルダパス+選択しているファイルリスト」を配列に格納する
+  var clipTextArray = [];
   pathMap.forEach(function (array, key) {
-    // 親フォルダのパス
-    clipText += key + '\n'
-    // 接頭辞を付与した選択しているファイルリスト
+    array.sort(); // ファイルリストを文字列ソート
+    var folderAndFilename = key + '\n';
     var prefix = '├ ';
     for (i = 0; i < array.length; i++) {
       if (i == array.length - 1) {
-        prefix = '└ '
+        prefix = '└ ';
       }
-      clipText += prefix + array[i] + '\n';
+      folderAndFilename += prefix + array[i] + '\n';
     }
-    clipText = clipText + '\n';
+    clipTextArray.push(folderAndFilename);
+  });
+  clipTextArray.sort(); // 親フォルダ単位で文字列ソート
+
+  // クリップボードに送るテキストを構築
+  clipTextArray.forEach(function (value) {
+    clipText += value + '\n';
   });
 
   return clipText;
