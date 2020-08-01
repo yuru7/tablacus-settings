@@ -1,6 +1,5 @@
-// 何も選択していない場合にはフォルダパスをコピーして終了
+// 何も選択していない場合には終了
 if (FV.SelectedItems() == 0) {
-  clipboardData.setData('text', FV.FolderItem.Path);
   return;
 }
 
