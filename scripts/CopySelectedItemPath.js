@@ -9,11 +9,15 @@ clipboardData.setData('text', clipText);
 function buildClipText(FV) {
   var items = FV.SelectedItems();
 
-  var clipText = '';
-  var pathMap = new Map();
+  var pathArray = [];
   for (var i = items.Count; i-- > 0; ) {
-    clipText += items[i].Path + '\n';
+    pathArray.push(items[i].Path);
   }
-
+  pathArray.sort();
+  
+  var clipText = '';
+  pathArray.forEach(function (value) {
+    clipText += value + '\n';
+  });
   return clipText;
 }
