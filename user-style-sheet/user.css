@@ -1,3 +1,9 @@
+/* タブ文字が長すぎる場合の折り返し不具合対策 */
+.tab div, .tab2 div, .tab3 div, .activetab div {
+  max-width: 300px;
+  text-overflow: ellipsis;
+}
+
 .tab, .tab2, .tab3,
 .tab:hover, .tab2:hover, .tab3:hover {
   box-shadow: none;
