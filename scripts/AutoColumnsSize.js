@@ -1,6 +1,9 @@
 FV.CurrentViewMode(4,16);
-// ファイル名、更新日、ファイルサイズ、ファイル種別の列の自動幅合わせを行う
 setTimeout(function()
 {
-  FV.Columns ='"System.ItemNameDisplay" -2 "System.DateModified" -2 "System.Size" -2 "System.ItemTypeText" -2';
+  // カラム幅の自動調整
+  var cols = FV.Columns;
+  cols = cols.replace(/"名前" [0-9]+/, '"System.ItemNameDisplay" -2'); // ファイル名
+  
+  FV.Columns = cols;
 }, 99);
