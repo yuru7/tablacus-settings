@@ -7,7 +7,7 @@ if (Items.Count) {
 }
 Items = String(clipboardData.getData("text")).split(/[\r\n]+/);
 for (var i in Items) {
-  if (/^"?[A-Z]:\\|^"?\\\\[A-Z]|^"?::{/i.test(Items[i])) {
+  if (/^"?[A-Z]:\\|^"?\\\\[A-Z1-9]|^"?::{|^"?%[-A-Z0-9_]+%/i.test(Items[i])) {
     Navigate(Items[i], SBSP_NEWBROWSER);
   }
 }
