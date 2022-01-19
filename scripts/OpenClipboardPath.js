@@ -5,9 +5,17 @@ if (Items.Count) {
   }
   return;
 }
-Items = String(clipboardData.getData("text")).split(/[\r\n]+/);
+var Items = String(clipboardData.getData("text")).split(/[\r\n]+/);
 for (var i in Items) {
-  if (/^"?[A-Z]:\\|^"?\\\\[A-Z1-9]|^"?::{|^"?%[-A-Z0-9_]+%/i.test(Items[i])) {
-    Navigate(Items[i], SBSP_NEWBROWSER);
+  var item = Items[i];
+  if (/^"?[A-Z]:\\|^"?\\\\[A-Z1-9]|^"?::{|^"?%[-A-Z0-9_]+%/i.test(item)) {
+    if (fso.FileExists(item)) {
+      item = fso.GetParentFolderName(item);
+    }
+    if (fso.FolderExists(item)) {
+      Navigate(item, SBSP_NEWBROWSER);
+    } else {
+      alert('開くフォルダーがありません');
+    }
   }
 }
