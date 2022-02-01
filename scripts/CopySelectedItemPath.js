@@ -16,6 +16,10 @@ function buildClipText(FV) {
   pathArray.sort();
   
   var clipText = '';
+  if (pathArray.length === 1) {
+    return pathArray[0];
+  }
+
   pathArray.forEach(function (value) {
     clipText += value + '\n';
   });
