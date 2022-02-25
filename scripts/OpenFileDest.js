@@ -28,7 +28,7 @@ function main() {
         for(var i = 0, item; i < items.Count; i++) {
           item = items.Item(i);
           if (item.Name == targetName) {
-            newFV.SelectItem(item, SVSI_SELECT);
+            newFV.SelectItem(item, SVSI_SELECT | SVSI_DESELECTOTHERS | SVSI_ENSUREVISIBLE | SVSI_FOCUSED);
             break;
           }
         }
