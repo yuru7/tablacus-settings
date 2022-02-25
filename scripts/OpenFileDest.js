@@ -17,5 +17,23 @@ function main() {
   }
   if (targetPath) {
     Navigate(targetPath, SBSP_NEWBROWSER);
+
+    var newFV = GetFolderView();
+    var items = newFV.Items();
+    var checkCount = setInterval(function () {
+      newFV = GetFolderView();
+      items = newFV.Items();
+      if (items.Count > 0) {
+        var targetName = fso.GetFileName(scPath);
+        for(var i = 0, item; i < items.Count; i++) {
+          item = items.Item(i);
+          if (item.Name == targetName) {
+            newFV.SelectItem(item, SVSI_SELECT);
+            break;
+          }
+        }
+        clearInterval(checkCount);
+      }
+    }, 500);
   }
 }
