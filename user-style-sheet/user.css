@@ -63,7 +63,7 @@
 
 /* 以降の配色設定は、通常時か「ダークモード」アドオン有効時かでコメントアウトを切り替える */
 
-/* --- 通常時の配色 ここから --- */
+/* --- ライトモード時の配色 ここから --- */
 /*
 .tab0:not(#tabgroups) {
   border-color: #646464;
@@ -88,7 +88,7 @@
   border-color: #8a8a8a;
 }
 */
-/* --- 通常時の配色 ここまで --- */
+/* --- ライトモード時の配色 ここまで --- */
 
 /* --- ダークモード時の配色 ここから --- */
 
@@ -97,9 +97,9 @@
 }
 .activetab {
   color: #fff;
-  background: #5c5e63;
+  background: #171a1f;
   box-shadow: 0 0 0 9em rgba(255, 255, 255, 0.25) inset;
-  border-color: #d14f5c;
+  border-color: #34a5cf;
 }
 .tab, .tab2, .tab3 {
   color: #b0b0b0;
